@@ -1,0 +1,18 @@
+POST http://localhost:3333/trips
+Content-Type: application/json
+
+{
+  "destination": "Natal",
+  "starts_at": "2024-10-10T14:00:00.000Z",
+  "ends_at": "2024-10-13T12:00:00.000Z",
+  "owner_name":"Tester",
+  "owner_email": "testermaster@test.com",
+  "emails_to_invite": [
+    "tester2@gmail.com",
+    "tester3@gmail.com"
+  ]
+}
+
+###
+
+GET http://localhost:3333/listar
