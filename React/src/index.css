@@ -5,3 +5,7 @@
 * {
   min-width: 0;
 }
+
+:root {
+  --rdp-accent-color: '#BEF264';
+}
