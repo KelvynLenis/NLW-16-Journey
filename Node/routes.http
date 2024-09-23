@@ -1,8 +1,10 @@
+### Create Trip ###
+
 POST http://localhost:3333/trips
 Content-Type: application/json
 
 {
-  "destination": "Natal",
+  "destination": "Recife",
   "starts_at": "2024-10-10T14:00:00.000Z",
   "ends_at": "2024-10-13T12:00:00.000Z",
   "owner_name":"Tester",
@@ -13,6 +15,70 @@ Content-Type: application/json
   ]
 }
 
-###
+### Update trip ###
 
-GET http://localhost:3333/listar
+PUT http://localhost:3333/trips/4637cabc-9432-4bd0-84b2-cd8c86ad3111
+Content-Type: application/json
+
+{
+  "destination": "Fernando de Noronha",
+  "starts_at": "2024-10-10T14:00:00.000Z",
+  "ends_at": "2024-10-13T12:00:00.000Z"
+}
+
+### Create Invite ###
+
+POST http://localhost:3333/trips/4637cabc-9432-4bd0-84b2-cd8c86ad3111/invite
+Content-Type: application/json
+
+{
+  "email": "johndoe@acme.com"
+}
+ 
+### Create Acitivy ###
+
+POST http://localhost:3333/trips/4637cabc-9432-4bd0-84b2-cd8c86ad3111/activities
+Content-Type: application/json
+
+{
+  "title": "Visitar o forte",
+  "occurs_at": "2024-10-10T10:00:00.000Z"
+}
+
+### Create Link ###
+
+POST http://localhost:3333/trips/4637cabc-9432-4bd0-84b2-cd8c86ad3111/links
+Content-Type: application/json
+
+{
+  "title": "Reserva do Aquarela",
+  "url": "https://www.aquarelahotel.com.br"
+}
+
+### Get activities  ###
+
+GET http://localhost:3333/trips/4637cabc-9432-4bd0-84b2-cd8c86ad3111/activities
+
+### Get trip details  ###
+
+GET http://localhost:3333/trips/4637cabc-9432-4bd0-84b2-cd8c86ad3111
+
+### Get participants  ###
+
+GET http://localhost:3333/trips/55c0766f-303b-4606-b230-e51fbe796db9/participants
+
+### Get participant  ###
+
+GET http://localhost:3333/participants/084399d8-aac2-4051-839b-84a10a6e8f90
+
+### Get links ###
+
+GET http://localhost:3333/trips/4637cabc-9432-4bd0-84b2-cd8c86ad3111/links
+
+### Confirm Trip ###
+
+GET http://localhost:3333/trips/f9f60f7b-a056-4bce-838f-719e1da1fdd3/confirm
+
+### Confirm Participant ###
+
+GET http://localhost:3333/participants/343991ef-059e-4e79-9d6c-e46174ffaee1/confirm
